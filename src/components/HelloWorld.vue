@@ -38,6 +38,9 @@
         </div>
       </div>
     </div>
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="" :style="korKinezete"></div>
+    </div>
   </div>
 </template>
 
@@ -53,6 +56,14 @@ export default {
       sugarInput: undefined,
       teruletSzamitas: undefined,
       keruletSzamitas: undefined,
+
+      korKinezete: {
+        width: "0px",
+        height: "0px",
+        backgroundColor: "#BED8E3",
+        borderRadius: "100%",
+        margin: "25px",
+      },
     };
   },
 
@@ -63,6 +74,9 @@ export default {
 
       //kerulet
       this.keruletSzamitas = 2 * Math.PI * this.sugarInput;
+
+      this.korKinezete.width = this.sugarInput * 2 + "px";
+      this.korKinezete.height = this.sugarInput * 2 + "px";
     },
   },
 };
